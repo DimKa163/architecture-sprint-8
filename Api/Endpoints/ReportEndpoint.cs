@@ -19,9 +19,8 @@ public static class ReportEndpoint
         return endpoints;
     }
 
-    private static async Task<IResult> GetReportListHandlerAsync(ISender sender, ClaimsPrincipal claimsPrincipal, CancellationToken cancellationToken)
+    private static async Task<IResult> GetReportListHandlerAsync(ISender sender, CancellationToken cancellationToken)
     {
-        var claims = claimsPrincipal.Claims.ToDictionary(x => x.Type, x => x.Value);
         return Results.Ok(await sender.Send(new DownloadReportRequest(), cancellationToken));
     }
 }
