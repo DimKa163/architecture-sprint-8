@@ -1,6 +1,10 @@
 ﻿namespace Api.Contracts;
 
-public class Report
+public record Report
 {
+    public string Title { get; init; }
     
+    public DateTime Begin { get; init; }
+    
+    public DateTime End { get; init; }
 }
