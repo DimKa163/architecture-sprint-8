@@ -43,8 +43,8 @@ services:
   
   backend:
     build:
-      context: .
-      dockerfile: Api/Dockerfile
+      context: ./Api
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     depends_on:
